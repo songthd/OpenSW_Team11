@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtEgo</title>
+</head>
+<body>
+  <!--fixed UI until **---------------------------------------->
+  <section id = "logged-out-main-container">
+    <header><h1>ArtEgo</h1></header>
+  </section>
+  <!-- **----------------------------------------------->
+  <!--intro page-->
+  <section id ="intro-container" >
+    <div class = "slide">
+      <!--link-->
+      <!--if user not logged in => log in page-->
+      <!--else => review page-->
+      <a href = "login.html">
+        <img src = "https://blogfiles.pstatic.net/MjAyMDExMjRfNTQg/MDAxNjA2MTQzNjc3Nzc0.H8m3ZJp6a_cRx-78coiiapGW4xNk89cldMj9w2tim6Qg.IW7otIHxe0P50WmtFxe2HIiky909cMbLqKmm3cDaal0g.JPEG.gseee0423/output_592749449.jpg" style = "width:300px">
+      </a>
+    </div>
+      <!--log in onclick=> log in page-->
+      <!-- join onclick=> join page-->
+      <form method = "get" action="signin.html">
+        <button name = "log_in" type = "submit">LOG IN</button>
+      </form>
+      <form method = "get" action="signup.html">
+        <button name = "join" type = "submit">JOIN</button>
+      </form>
+  </section>
+  <!--sign in page-->
+  <section id = "log-in-container">
+    <!--signin.html comes here-->
+  </section>
+  <!--sign up page-->
+  <section id = "signup-container">
+    <!--signup.html comes here-->
+  </section>
+</body>
+</html>

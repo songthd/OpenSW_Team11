@@ -1,0 +1,106 @@
+<!-- logged in main page-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ArtEgo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--temporary style for poster-->
+    <style>
+    #exhibition-list-container {position: relative;width: 20%;}
+    .image { display: block; width: 30%;height: auto;}
+    .overlay {position: absolute;bottom: 0;left: 100%;right: 0; background-color: #008CBA;overflow: hidden; width: 0; height: 100%;transition: .5s ease;}
+    #exhibition-list-container:hover .overlay {width: 100%;left: 0;}
+    .text { color: white; font-size: 20px; position: absolute; top: 50%; left: 50%;
+      -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); white-space: nowrap;}
+    </style>
+</head>
+<body>
+  <div id = "login">
+    <!--fixed UI until **---------------------------------------------->
+    <section id = "menu-container">
+      <nav id = "menu">
+        <!--temporary style-->
+        <style>
+          #menu a{text-decoration:none;}
+          #menu li{list-style:none;display:inline-block;padding:5px;}
+        </style>
+        <ul>
+          <!-- later change to button-->
+          <!--onclick=> event page-->
+          <li><a href = "event.html">EVENT</a></li>
+          <!--onclick=>my calendar page-->
+          <li><a href = "mycalendar.html">MY CALENDAR</a></li>
+          <!--onclick=>logged out main page-->
+          <li><a href = "logout.html">LOG OUT</a></li>
+        </ul>
+      </nav>
+      <!--Logo-->
+      <header><h1>ArtEgo</h1></header>
+    </section>
+    <!-- ** -------------------------------------------------------->
+    <section id = "logged-in-main-container">
+      <div id = "search-engine">
+        <input type = "text" placeholder="검색어 입력">
+          <a href="#"><i class="fa fa-fw fa-search"></i></a>
+      </div>
+      <div id = "region-search">
+        <!--later removed from this container-->
+        <!--onclick => map UI-->
+        <button id = "region" class ="search">BY REGION</button>
+      </div>
+    </section>
+    <section id = "map-container">
+        <div id="googleMap" style="width:100%;height:400px;"></div>
+    </section>
+
+    <!--list of posters of the exhibitions-->
+    <section id = "exhibition-list-container">
+      <a href = "login.html">
+        <img src = "https://blogfiles.pstatic.net/MjAyMDExMjRfNTQg/MDAxNjA2MTQzNjc3Nzc0.H8m3ZJp6a_cRx-78coiiapGW4xNk89cldMj9w2tim6Qg.IW7otIHxe0P50WmtFxe2HIiky909cMbLqKmm3cDaal0g.JPEG.gseee0423/output_592749449.jpg" style = "width:300px" class = image>
+      </a>
+      <div class="overlay">
+        <div class="text">Best of 2020<br>8th Dec, 2020<br>Seoul</div>
+      </div>
+    </section>
+
+    <!--review page-->
+    <section id = "review-container"></section>
+
+    <!--my calendar page-->
+    <serction id = "mycalendar-container"></serction>
+
+    <!--event-page-->
+    <serction id = "event-container"></serction>
+    </div>
+
+    <!--temporary script for map-->
+    <script>
+    function myMap() {
+    var mapProp= {
+      center:new google.maps.LatLng(51.508742,-0.120850),
+      zoom:5,
+    };
+    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    }
+    //add marker
+    var marker = new google.maps.Marker({
+      position:myCenter
+    });
+    marker.setMap(map);
+
+    //open an infoWindow when clicking on the Marker
+    var infowindow = new google.maps.InfoWindow({
+        content:""
+    });
+    google.maps.event.addListener(marker, 'click', function(){
+      infowindow.open(map, marker);
+    });
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+</body>
+</html>
